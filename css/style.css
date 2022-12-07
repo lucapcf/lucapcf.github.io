@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,700;1,200;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 62.5%;
+    color: white;
+}
+
+/* html {
+
+} */
+
+/* quando devo usar o "root", "html" e " "*"? */
+
+/* :root {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: white;
+} */
+
+header {
+    background-color: rgba(25, 25, 25, 0.9);/*Opacidade é herdada - definir junto com a cor*/
+    opacity: 1;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 10%;
+}
+
+nav ul {
+    margin-top: 0px;
+    /* margin: 0;
+    padding: 0; */
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+body {
+    background-color: rgb(44, 44, 44);
+    font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: darkslategray;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+li, li a {
+    opacity: 1;
+    padding: 10rem;
+    font-weight: 400;
+    font-size: 8rem;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-size: 10rem;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 30rem;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    /* padding: 10%; */
+    font-weight: 400;
+    font-size: 15rem;
+    text-align: left;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p {
+    font-size: 8rem;
+    display: inline;
+}
+
+hr {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+input {
+    color: black;
+}
+
+footer {
+    /* margin-bottom: 0px; */
+    display: flex;
+    height: 80rem;
+}
+
+span {
+    animation: blinker 1s linear infinite;
+}
+
+label {
+    font-size: 8rem;
+}
+
+form {
+    font-size: 8rem;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid lightgray;
+    border-top-color: rgb(30, 50, 50);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+}
+
+
+/* no documento html:
+fica mais organizado eu colocar o logo dentro da tag <nav>? */
+.logo {
+    margin-left: 0px;
+    width: 20rem;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: black;
+}
+
+.img_pg_inicial {
+    margin: auto;
+    display: block;
+    height: 300;
+}
+
+.button_redes_sociais {
+    display: flex inline;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10rem;
+    height: 5rem;
+    width: 5rem;
+    padding: 10rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_orcamento {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 5rem;
+    width: 100%;
+    padding: 10rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_form {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 5rem;
+    width: 40rem;
+    padding: 10rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_redes_sociais:hover, .button_orcamento:hover, .button_form:hover {
+    /* background-color: darkslategray; */
+    background-color: transparent;
+    border: 7px solid black;
+    cursor: pointer;
+}
+
+.container_footer_1 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+.container_footer_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_footer_logo {
+    display: flex;
+    flex: 1;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* nao consegui adicionar espaçamento entre nome e botoes (vertical)
+   devo usar flexbox também ou outra coisa?
+*/
+.box_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 2;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.container_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_2 {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    flex: 1;
+}
+
+.container_1_projetos {
+    display: grid;
+    gap: 10rem;
+    margin: 10rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: repeat(2, 1fr);
+}
+  
+.container_1_projetos img {
+    width: 100%;
+}
+
+.image_projetos {
+	position: relative;
+	width: 100%;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+	backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+	background: #009578;
+}
+
+.image__overlay>* {
+	transform: translateY(20px);
+	transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+	opacity: 1;
+}
+
+.image__overlay:hover>* {
+	transform: translateY(0);
+}
+
+.image__title {
+	font-size: 5rem;
+	font-weight: bold;
+}
+
+.box_sobre {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_servicos {
+    width: 50vw;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.container_projetos_1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_projetos_2 {
+    display: flex;
+    flex-direction: column;
+    flex: 40%;
+    justify-content: space-around;
+}
+
+.box_projetos {
+    flex: 1;
+}
+
+.box_projetos img {
+    width: 10%;
+}
+
+.box_sobre img {
+    width: 80%;
+    display: block;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#buttons_footer {
+    display: flex;
+    justify-content: flex-start space-between;
+}
+
+#footer_text {
+    font-weight: 100;
+    font-size: 4rem;
+    text-align: justify;
+    line-height: 7rem;
+}
+
+#footer_label {
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: justify;
+}
+
+#p_servicos {
+    text-align: left;
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#p_sobre {
+    text-align: justify;
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#top_footer {
+    flex: 4;
+    background-color: rgb(25, 25, 25);
+}
+
+#bottom_footer {
+    flex: 1;
+    background-color: rgb(15, 15, 15);
+}
+
+#titulo_pg_inicial {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+#img_depoimento {
+    width: 50%;
+}
+
+#video_pagina_inicial {
+    width: 50%;
+}
+
+#titulo_pg_inicial {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+
+
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+  
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+}
